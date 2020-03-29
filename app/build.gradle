@@ -1,105 +1,183 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.google.protobuf'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'com.amazonaws.appsync'
 
 android {
+    /* Android P deprecated something we need */
+    useLibrary 'org.apache.http.legacy'
+
     compileSdkVersion 29
-    buildToolsVersion '29.0.0'
-    defaultConfig {
-        applicationId "me.taosunkist.hello"
-        minSdkVersion 19
-        multiDexEnabled true
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-    sourceSets {
-        main {
-            proto {
-                // In addition to the default 'src/main/proto'
-                srcDir 'src/main/protobuf'
-                srcDir 'src/main/protocolbuffers'
-                // In addition to the default '**/*.proto' (use with caution).
-                // Using an extension other than 'proto' is NOT recommended,
-                // because when proto files are published along with class files, we can
-                // only tell the type of a file from its extension.
-                include '**/*.protodevel'
-            }
-            java {
-                main.java.srcDirs += 'src/main/kotlin'
-                main.java.srcDirs += 'src/main/java'
-                main.java.srcDirs += 'src/main/gen'
-            }
-        }
-        test {
-            proto {
-                // In addition to the default 'src/test/proto'
-                srcDir 'src/test/protocolbuffers'
-            }
-        }
+    buildToolsVersion "29.0.2"
 
-    }
-    configurations {
-        all*.exclude group: 'com.google.guava', module: 'listenablefuture'
-    }
-}
-protobuf {
-//    protoc { artifact = 'com.google.protobuf:protoc:3.6.1' }
-    protoc {
-        path = '/Users/taohui/DevStation/hi_golang/bin/protoc'//可以配置成环境变量
-    }
-    plugins {
-        javalite { artifact = "com.google.protobuf:protoc-gen-javalite:3.0.0" }
-        grpc {
-            artifact = 'io.grpc:protoc-gen-grpc-java:1.19.0' // CURRENT_GRPC_VERSION
-        }
-    }
+    def versionMajor, versionMinor, versionPatch, versionBuild
+    versionMajor = 1
+    versionMinor = 0
+    versionPatch = 0
+    versionBuild = 0
 
-    generateProtoTasks {
-        all().each { task ->
-            task.plugins {
-                javalite {}
-                grpc { // Options added to --grpc_out
-                    option 'lite'
-                }
-            }
-        }
-    }
-}
-dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'junit:junit:4.13-beta-3'
-    //    GRPC
-    implementation 'io.grpc:grpc-okhttp:1.22.1' // CURRENT_GRPC_VERSION
-    implementation 'io.grpc:grpc-protobuf-lite:1.22.1' // CURRENT_GRPC_VERSION
-    implementation 'io.grpc:grpc-stub:1.22.1' // CURRENT_GRPC_VERSION
-
-    implementation 'javax.annotation:javax.annotation-api:1.3.2'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
-    implementation 'androidx.appcompat:appcompat:1.1.0-rc01'
-    implementation 'androidx.viewpager:viewpager:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0-beta01'
-    implementation 'com.android.support.constraint:constraint-layout:2.0.0-beta2'
-    implementation 'com.google.android.material:material:1.1.0-alpha08'
-    implementation 'androidx.multidex:multidex:2.0.1'
-
-
-}
-repositories {
-    mavenCentral()
-}
-android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    defaultConfig {
+        applicationId "com.zhimeng.battery"
+        minSdkVersion 21
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
+        multiDexEnabled true
+        targetSdkVersion 29
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
+        buildConfigField "String", "VERSION", "\"${versionMajor}.${versionMinor}.${versionPatch}\""
+        versionCode versionMajor * 10000000 + versionMinor * 100000 + versionPatch * 10000 + versionBuild
+        versionName "${versionMajor}.${versionMinor}.${versionPatch}(${versionBuild})"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("../keystore/debug.jks")
+            keyAlias 'frontline'
+            keyPassword 'frontline2019'
+            storePassword 'frontline2019'
+        }
+        release {
+            keyAlias 'battery'
+            storeFile file('../keystore/battery_release.jks')
+            keyPassword 'battery2020'
+            storePassword 'battery2020'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    buildTypes {
+        buildTypes {
+            debug {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+                jniDebuggable true
+                multiDexEnabled true
+                buildConfigField "boolean", "DEBUGGING_MODE", "true"
+                buildConfigField "boolean", "ALLOW_SERVER_SWITCH", "true"
+                debuggable true
+                signingConfig signingConfigs.debug
+            }
+            release {
+                minifyEnabled false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'
+                buildConfigField "boolean", "DEBUGGING_MODE", "false"
+                buildConfigField "boolean", "STAGING_MODE", "false"
+                buildConfigField "boolean", "ALLOW_SERVER_SWITCH", "false"
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+    flavorDimensions "battery"
+    productFlavors {
+        generic {
+            dimension "battery"
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "generic", app_name: "BatteryForGeneric"]
+        }
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    /* Kotlin */
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    /* Android Support libs */
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.android.support:design:29.0.0'
+
+    /* Image Loading/Processing */
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    /* Toast/SnackBar */
+    implementation 'com.github.GrenderG:Toasty:1.4.2'
+
+    /* Camera */
+    implementation 'io.fotoapparat:fotoapparat:2.7.0'
+    implementation 'io.fotoapparat:facedetector:1.0.0'
+
+    /* Network/Parsing */
+    implementation 'com.squareup.retrofit2:retrofit:2.6.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
+    /* EventBus */
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.2'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.3.0'
+    implementation 'com.jakewharton.rxrelay2:rxrelay:2.1.0'
+
+    /* Unit Tests */
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.test.ext:junit:1.1.1'
+    testImplementation 'androidx.test:runner:1.2.0'
+    testImplementation 'androidx.test:rules:1.2.0'
+    testImplementation 'org.hamcrest:hamcrest-library:1.3'
+    testImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2'
+
+    /* 自动产生假数据的第三方库 Faker */
+    implementation 'com.github.moove-it:fakeit:v0.7'
+
+    /* Multi-dex */
+    implementation 'com.android.support:multidex:1.0.3'
+
+    /* 图片详情，放大缩小一些列 */
+    implementation 'com.github.chrisbanes:PhotoView:2.3.0'
+
+    /* Airbnb lottie */
+    implementation 'com.airbnb.android:lottie:3.0.7'
+
+    /* Tab bar */
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+
+    /* Amazon */
+    def aws_version = "2.14.0"
+    implementation "com.amazonaws:aws-android-sdk-core:$aws_version"
+    implementation "com.amazonaws:aws-android-sdk-cognito:$aws_version"
+    implementation "com.amazonaws:aws-android-sdk-s3:$aws_version"
+    implementation("com.amazonaws:aws-android-sdk-mobile-client:$aws_version") { transitive = true }
+    /* 下拉选择 */
+    implementation 'com.github.arcadefire:nice-spinner:1.4.4'
+
+    /* 数据库 */
+    def room_version = "2.2.5"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    /*scan qr-code library*/
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.7'
 }

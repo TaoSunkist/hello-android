@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CircleImageView">
+        <attr name="civ_border_width" format="dimension" />
+        <attr name="civ_border_color" format="color" />
+        <attr name="civ_border_overlay" format="boolean" />
+        <attr name="civ_circle_background_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="CorneredImageView">
+        <attr name="corner_radius" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="VoiceProgressView">
+        <attr name="bar_gravity" format="enum">
+            <enum name="anchor_center" value="0" />
+            <enum name="anchor_bottom" value="1" />
+        </attr>
+        <attr name="bar_radius_x" format="dimension" />
+        <attr name="bar_radius_y" format="dimension" />
+        <attr name="bar_count" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="FitRatioFrameLayout">
+        <attr name="fit_to" format="enum">
+            <enum name="width" value="0" />
+            <enum name="height" value="1" />
+        </attr>
+        <attr name="width_weight" format="integer|reference" />
+        <attr name="height_weight" format="integer|reference" />
+    </declare-styleable>
+
+    <!-- FlowLayout Attributes -->
+
+    <declare-styleable name="FlowLayout">
+        <attr name="oh_flow_layout_horizontal_margin" format="dimension|reference" />
+        <attr name="oh_flow_layout_vertical_margin" format="dimension|reference" />
+        <attr name="oh_flow_layout_vertical_align_type" format="enum">
+            <enum name="center" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="top" value="2" />
+        </attr>
+        <attr name="oh_flow_layout_horizontal_align_type" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!-- Stack Layout Attributes -->
+
+    <declare-styleable name="StackLayout">
+        <attr name="orientation" format="enum">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="gravity" format="enum">
+            <enum name="left_or_top" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right_or_bottom" value="2" />
+        </attr>
+        <attr name="childGravity" format="enum">
+            <enum name="left_or_top" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right_or_bottom" value="2" />
+        </attr>
+        <attr name="spacing" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleGridLayout">
+        <attr name="verticalSpacing" format="dimension" />
+        <attr name="horizontalSpacing" format="dimension" />
+        <attr name="itemHeight" format="dimension" />
+        <attr name="columnCount" format="integer" />
+        <attr name="showDivider" format="boolean" />
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="dividerColor" format="color" />
+    </declare-styleable>
+
+    <!-- Pager Indicator -->
+
+    <declare-styleable name="PageIndicator">
+        <attr name="selected_color" format="color|reference" />
+        <attr name="default_color" format="color|reference" />
+        <attr name="dot_size" format="dimension|reference" />
+        <attr name="dot_margin" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DisabledAnimationRecyclerView">
+        <attr name="allDefaultAnimationEnabled" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="title_bar">
+        <attr name="title_text" format="string" />
+        <attr name="title_size" format="float" />
+        <attr name="title_color" format="color" />
+        <attr name="left_image" format="reference" />
+        <attr name="right_image" format="reference" />
+        <attr name="line_enable" format="boolean" />
+        <attr name="right_text" format="string" />
+        <attr name="left_text" format="string" />
+        <attr name="left_text_color" format="color" />
+        <attr name="background_color" format="reference|color" />
+        <attr name="right_text_color" format="color" />
+        <attr name="right_text_size" format="dimension" />
+        <attr name="left_text_size" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="ScrewThreadProgressBar">
+        <attr name="stpb_radius" format="dimension" />
+        <attr name="stpb_background" format="color" />
+        <attr name="stpb_image" format="reference" />
+        <attr name="stpb_max" format="integer" />
+    </declare-styleable>
+
+</resources>

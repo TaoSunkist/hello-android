@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:clickable="true"
+    android:focusable="true">
+
+    <com.zhimeng.battery.ui.reusable.views.TitleBar
+        android:id="@+id/view_controller_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_color="@android:color/transparent"
+        app:left_image="@drawable/ic_arrow_back_black"
+        app:line_enable="false"
+        app:title_color="@android:color/black"
+        app:title_text="PAYBY" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginTop="58dp"
+        android:text="Processing. Please wait."
+        android:textColor="#AAFFFFFF"
+        android:textSize="23dp"
+        android:textStyle="bold" />
+
+    <com.zhimeng.battery.ui.common.indicatorprogressbar.IndicatorProgressBar
+        android:id="@+id/view_loading_cover_content_indicator_progressbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:stpb_background="#66FFFFFF"
+        app:stpb_image="@drawable/bg_stpb_progress"
+        app:stpb_max="1"
+        app:stpb_radius="8dp" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="Please wait"
+        android:textColor="@android:color/white"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/view_loading_cover_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/view_loading_cover_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:visibility="gone" />
+
+</FrameLayout>

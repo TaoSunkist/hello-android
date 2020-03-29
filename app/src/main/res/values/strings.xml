@@ -1,13 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">hello-android</string>
+    <string name="app_name">移动核电站</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="common_yes">yes</string>
+    <string name="common_no">no</string>
+    <string name="unavailable_network_failed_tip">This station is not found in the network. Please try with another nearby station.</string>
+    <string name="fixing_failed_tip">This station is awaiting for repair. Please try with another nearby station.</string>
+    <string name="bad_network_failed_tip">Connection failed. Please try again.</string>
+    <string name="fragment_user_profile_logout_title">exit</string>
+    <string name="fragment_user_profile_confirm_logout_title">确定要登出吗</string>
+    <string name="address">2 平米智慧学习\n北京市朝阳区伊藤洋华堂3楼</string>
+    <string name="view_controller_authentication_not_enough_info_message">请输入手机号和验证码</string>
+    <string name="three_line">三线设计，适配全部机型</string>
+    <string name="coin">1.5元/30分钟，5分钟内免费\n不足30分钟按30分钟计算，每24小时封顶20元，总封顶99元。</string>
+    <string name="battery_box">全国100万+家门店，租借通还</string>
+    <string name="agreement">点击即同意《用户协议》《充值说明》《委托扣款授权书》</string>
+    <string name="common_no_gallery_permission">没有访问您照片的权限</string>
 
-    <string name="action_settings">Settings</string>
-    <string name="action_qr_code">QR Code</string>
-    <string name="action_dashboard">Dashboard</string>
+    <!--  TRANSLATED   -->
+    <string name="unkonwn_failed_tip">Unknown Failed</string>
+    <string name="login">Login</string>
+    <string name="exit">Exit</string>
+    <string name="account">Account</string>
+    <string name="scan_qr">Scan QR</string>
+    <string name="to_home">to home</string>
+    <string name="renting_a_powerbank">You need to pay for the deposit before renting a powerbank</string>
+    <string name="money_type">AED</string>
+    <string name="wechat">Wechat</string>
+    <string name="back_your_deposit">How to get back your deposit</string>
+    <string name="paybuy_0_3">Please call our customer support to request a refund for your deposit</string>
+    <string name="deposit">Deposit</string>
+    <string name="Success">Success</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

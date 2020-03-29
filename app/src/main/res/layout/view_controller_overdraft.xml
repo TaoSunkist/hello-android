@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF7F7F7"
+    android:orientation="vertical">
+
+    <com.zhimeng.battery.ui.reusable.views.TitleBar
+        android:id="@+id/view_controller_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_color="@android:color/white"
+        app:left_image="@drawable/ic_arrow_back_black"
+        app:left_text="   充电详情"
+        app:left_text_color="@android:color/black"
+        app:line_enable="false"
+        app:title_color="@android:color/black" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_controller_overdraft_status_tip_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="center_horizontal|end"
+            android:paddingStart="0dp"
+            android:paddingTop="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_large"
+            android:paddingBottom="@dimen/margin_xxxlarge"
+            android:text="Unpaid Order"
+            android:textColor="@android:color/holo_red_light" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_cost_altogether_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:maxLines="1"
+                android:text="0"
+                android:textColor="@color/colorAccent"
+                android:textSize="45sp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/view_controller_overdraft_cost_altogether_textview"
+                android:layout_marginBottom="@dimen/margin_large"
+                android:layout_toEndOf="@id/view_controller_overdraft_cost_altogether_textview"
+                android:gravity="bottom"
+                android:text=" AED"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </FrameLayout>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/margin_xlarge"
+        android:paddingTop="@dimen/margin_xxlarge"
+        android:paddingEnd="@dimen/margin_xlarge"
+        android:paddingBottom="@dimen/margin_large">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pricing"
+            android:textColor="@color/colorTextGray" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Free for 5 minutes."
+                android:textColor="@color/colorTextGrayDark"
+                android:textDirection="rtl" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="1.5 AED/30 mins after, cap at 20 AED daily maximum."
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:text="Up to 99 AED rental maximum - the powerbank is yours!"
+                android:textColor="@color/colorTextGrayDark" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@android:color/white"
+        android:padding="@dimen/margin_xlarge">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Duration"
+            android:textColor="@color/colorTextGray" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_controller_overdraft_charge_duration_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="0 day(s) 0 hour(s) 2 minute(s)"
+            android:textColor="@color/colorTextGrayDark" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="15dp"
+            android:paddingTop="@dimen/margin_large"
+            android:text="Payment method"
+            android:textColor="@color/colorTextGray" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_controller_overdraft_pay_channel_textview"
+            android:layout_width="wrap_content"
+            android:text="Account Balance 、Payby"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="15dp"
+            android:paddingTop="@dimen/margin_large"
+            android:textColor="@color/colorTextGrayDark" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:background="@android:color/white"
+        android:paddingStart="@dimen/margin_xlarge"
+        android:paddingEnd="@dimen/margin_xlarge"
+        android:paddingBottom="@dimen/margin_xlarge">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="Order Number"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="Powerbank ID"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="Start time"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="Station"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="End Time"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="Returning station"
+                android:textColor="@color/colorTextGray" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:text="扫码渠道"
+                android:textColor="@color/colorTextGray" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_orderid_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_powerid_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_lease_date_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_lease_address_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_give_back_date_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_give_back_address_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_overdraft_qrcode_channel_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:textColor="@color/colorTextGrayDark" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/margin_xlarge">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/view_controller_overdraft_to_pay_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:background="@drawable/selector_login_button"
+            android:text="Pay"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

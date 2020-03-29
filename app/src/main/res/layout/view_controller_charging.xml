@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/common_id_coordinate_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical"
+    android:scrollbars="none">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/bg_advert" />
+
+            <com.zhimeng.battery.ui.reusable.views.TitleBar
+                android:id="@+id/view_controller_titlebar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:background_color="@android:color/transparent"
+                app:left_image="@drawable/ic_white_back_arrow"
+                app:line_enable="false"
+                app:title_color="@android:color/black" />
+
+        </FrameLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/view_controller_charging_status_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:text="In Use …"
+            android:textColor="@color/colorTextGrayDark"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:text="Please return the powerbank to a nearby station after you finished."
+            android:textColor="@color/colorTextGray"
+            android:textSize="13sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xxlarge"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:paddingEnd="@dimen/margin_xxlarge"
+            app:cardCornerRadius="10dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_charging_status_bg"
+                    android:drawableEnd="@drawable/ic_status"
+                    android:gravity="center_vertical"
+                    android:paddingStart="@dimen/margin_large"
+                    android:paddingTop="@dimen/margin_medium"
+                    android:paddingEnd="@dimen/margin_large"
+                    android:paddingBottom="@dimen/margin_medium"
+                    android:text="Usage:"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/margin_large">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Duration："
+                            android:textColor="@color/colorTextGray" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_controller_charging_duration_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0 day(s) 0 hour(s) 2 minute(s)"
+                            android:textColor="@color/colorTextGrayDark" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Amount"
+                            android:textColor="@color/colorTextGray" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/view_controller_charging_cost_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="AED 0"
+                            android:textColor="@color/colorTextGrayDark" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/margin_large">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Station"
+                        android:textColor="@color/colorTextGray" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_controller_charging_address_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorTextGrayDark" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_large">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Standard"
+                        android:textColor="@color/colorTextGray" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/view_controller_charging_standard_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Free for 5 minutes. 1.5 AED/30 mins after, cap at 20 AED daily maximum. Up to 99 AED maximum - the powerbank is yours!"
+                        android:textColor="@color/colorTextGrayDark" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginTop="@dimen/margin_xlarge"
+            android:drawableStart="@drawable/ic_error_outline_black_24dp"
+            android:drawablePadding="@dimen/margin_medium"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_medium"
+            android:text="How to return a powerbank: "
+            android:textColor="@android:color/holo_red_light" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_medium"
+            android:paddingEnd="@dimen/margin_large"
+            android:text="1,Find a station in the app with an empty returning slot.\n2, Plug the cables back to the powerbank and place the powerbank back to the staion with the arrow signs facing forward. A tone will ring in 3 seconds if the return is successful.\n3, If you encountered any issue, please contact our customer service for aid." />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="@dimen/margin_xlarge">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/view_controller_charging_call_phone_artificial_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:gravity="bottom"
+                android:padding="@dimen/margin_xlarge"
+                android:text="Customer service"
+                android:textColor="@color/colorTextGrayDark"
+                android:textSize="15sp" />
+        </FrameLayout>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

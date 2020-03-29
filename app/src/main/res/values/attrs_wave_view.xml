@@ -1,7 +1,0 @@
-<resources>
-    <declare-styleable name="WaveView">
-        <attr name="exampleString" format="string" />
-        <attr name="exampleDimension" format="dimension" />
-        <attr name="exampleColor" format="color" />
-    </declare-styleable>
-</resources>

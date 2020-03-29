@@ -1,0 +1,16 @@
+{
+  "CredentialsProvider": {
+    "CognitoIdentity": {
+      "Default": {
+        "PoolId": "cn-north-1:9869b00b-70bd-47a3-9068-41defdc71567",
+        "Region": "cn-north-1"
+      }
+    }
+  },
+  "S3TransferUtility": {
+    "Default": {
+      "Bucket": "tatame-user-photo",
+      "Region": "cn-north-1"
+    }
+  }
+}

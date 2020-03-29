@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!-- Common Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_220">#DCFFFFFF</color>
+
+    <!-- App Theme Colors -->
+    <color name="colorPrimary">#00A75D</color>
+    <color name="colorPrimaryDark">#00A75D</color>
+    <color name="colorAccent">@color/colorPrimary</color>
+    <color name="colorTextGrayDark">#080808</color>
+    <color name="colorTextGray">#7B7B7B</color>
+
+    <!-- TitleBar标题字体颜色-->
+    <color name="uikit_title_bar_title_color">@android:color/black</color>
+    <!--TitleBar背景颜色 -->
+    <color name="uikit_title_bar_bg_color">@android:color/white</color>
+    <color name="uikit_title_color">#ff353535</color>
+
 </resources>

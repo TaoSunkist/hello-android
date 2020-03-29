@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="id_item_position" type="id" />
+    <item name="id_item_object" type="id" />
+    <item name="view_layout_info_tag_key" type="id"></item>
+
+</resources>

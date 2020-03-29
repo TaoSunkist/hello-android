@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_xlarge"
+    android:background="@drawable/ripple_white_rounded_25dp"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/margin_xlarge"
+    android:paddingTop="@dimen/margin_xxlarge"
+    android:paddingEnd="@dimen/margin_xlarge"
+    android:paddingBottom="@dimen/margin_xxlarge">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_overdraft" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:text="Tips"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_controller_status_tips_content_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_large"
+        android:layout_marginBottom="@dimen/margin_large"
+        android:gravity="center"
+        android:text="You have a in-use powerbank\nThank you for seleteing our service"
+        android:textColor="@color/black"
+        android:textSize="14sp" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/view_controller_status_button"
+        style="@style/defaultButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_xlarge"
+        android:background="@drawable/selector_login_button"
+        android:paddingStart="@dimen/margin_xxxlarge"
+        android:paddingEnd="@dimen/margin_xxxlarge"
+        android:text="View details"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

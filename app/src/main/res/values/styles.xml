@@ -1,20 +1,90 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <integer name="anim_duration_short">200</integer>
+
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="background_color">@android:color/white</item>
+        <item name="android:windowDisablePreview">true</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme" parent="AppThemeBase" />
+
+    <!-- Standard animations for a full-screen window or activity. -->
+    <style name="OverlayActivityAnimations" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/anim_slide_up</item>
+        <item name="android:activityCloseExitAnimation">@anim/anim_slide_down</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <!-- Toolbar styles -->
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="defaultToolbarStyle">
 
+    </style>
+
+    <style name="defaultToolbarStyle.Transparent" parent="defaultToolbarStyle">
+        <item name="android:theme">@style/ThemeOverlay.AppCompat.Dark</item>
+        <item name="android:colorControlNormal">@color/white</item>
+    </style>
+
+    <style name="defaultToolbarStyle.White" parent="defaultToolbarStyle">
+        <item name="android:background">@color/white</item>
+        <item name="android:colorControlNormal">@color/black</item>
+    </style>
+
+    <style name="defaultGradientButtonStyle">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">@drawable/bg_button_gradient</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="defaultOvalWhiteDismissButtonStyle">
+        <item name="android:background">@drawable/bg_oval_black_28dp</item>
+        <item name="android:padding">@dimen/margin_medium</item>
+        <item name="android:src">@drawable/ic_nav_dismiss_white</item>
+    </style>
+
+    <style name="defaultStrokeButtonStyle">
+        <item name="android:layout_height">50dp</item>
+        <item name="android:background">@drawable/bg_button_stroke_rounded_50dp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="defaultStrokeButtonStyle.White" parent="defaultStrokeButtonStyle">
+        <item name="android:background">@drawable/bg_button_login_off</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="defaultButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:elevation">0dp</item>
+        <item name="android:background">@drawable/ripple_white_rect</item>
+    </style>
+
+    <style name="whiteOvalImageButtonStyle" parent="ovalImageButtonStyle">
+        <item name="android:background">@drawable/ripple_white_oval</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ovalImageButtonStyle">
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:layout_width">@dimen/circle_button_default</item>
+        <item name="android:layout_height">@dimen/circle_button_default</item>
+    </style>
+
+    <style name="gradientOvalImageButtonStyle" parent="ovalImageButtonStyle">
+        <item name="android:background">@drawable/ripple_gradient_oval</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="noBackgroundButtonStyle" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:elevation">0dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:background">@null</item>
+    </style>
 </resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/common_id_coordinate_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ic_home_background"
+        android:scaleType="fitXY" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_controller_home_scan_qr_code_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="128dp"
+        android:background="@drawable/selector_scan_qr_button"
+        android:drawableTop="@drawable/ic_scan_qrcode"
+        android:drawablePadding="@dimen/margin_large"
+        android:enabled="true"
+        android:gravity="center_horizontal"
+        android:paddingTop="38dp"
+        android:text="@string/scan_qr"
+        android:textAllCaps="false"
+        android:textColor="@android:color/black" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_controller_home_exit_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_marginStart="@dimen/margin_xxlarge"
+        android:layout_marginBottom="@dimen/margin_xxlarge"
+        android:drawableTop="@drawable/ic_home_exit"
+        android:drawablePadding="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
+        android:paddingStart="@dimen/margin_xlarge"
+        android:text="@string/exit"
+        android:textColor="@android:color/white" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/view_controller_home_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="@dimen/margin_xxlarge"
+        android:layout_marginBottom="@dimen/margin_xxlarge"
+        android:drawableTop="@drawable/ic_profile"
+        android:drawablePadding="@dimen/margin_medium"
+        android:padding="@dimen/margin_medium"
+        android:paddingEnd="@dimen/margin_large"
+        android:text="@string/account"
+        android:textColor="@android:color/white" />
+</FrameLayout>

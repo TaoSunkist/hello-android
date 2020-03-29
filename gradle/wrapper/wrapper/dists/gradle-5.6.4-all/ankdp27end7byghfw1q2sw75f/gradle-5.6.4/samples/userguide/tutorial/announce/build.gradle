@@ -1,0 +1,11 @@
+apply {
+  plugin 'announce'
+  plugin 'java'
+}
+
+// tag::full-example[]
+announce {
+  announceTwitterUsername = 'AnnounceExampleTwitterAccount'
+  announceTwitterPassword = 'your-password'
+}
+// end::full-example[]

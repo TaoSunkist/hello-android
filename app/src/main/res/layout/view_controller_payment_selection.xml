@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.zhimeng.battery.ui.reusable.views.TitleBar
+        android:id="@+id/view_controller_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_color="@android:color/transparent"
+        app:left_image="@drawable/ic_arrow_back_black"
+        app:line_enable="false"
+        app:title_color="@android:color/black"
+        app:title_text="PAYBY" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_xlarge"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_marginEnd="@dimen/margin_xlarge"
+        app:cardCornerRadius="12dp">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_xxlarge"
+                android:gravity="center"
+                android:text="@string/renting_a_powerbank"
+                android:textColor="@color/black" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/margin_xlarge"
+                android:layout_marginBottom="@dimen/margin_xxlarge"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:text="36"
+                    android:textColor="@android:color/black"
+                    android:textSize="28sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="@dimen/margin_small"
+                    android:paddingBottom="4dp"
+                    android:text="@string/money_type"
+                    android:textColor="@android:color/black" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/light_gray" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/margin_xlarge"
+                    android:paddingEnd="@dimen/margin_xlarge">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/margin_xlarge"
+                        android:layout_marginTop="@dimen/margin_xlarge"
+                        android:layout_marginBottom="@dimen/margin_xlarge"
+                        android:drawableStart="@drawable/ic_wechat"
+                        android:drawablePadding="@dimen/margin_xlarge"
+                        android:gravity="center_vertical"
+                        android:text="@string/wechat" />
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/view_controller_payment_selection_pay_checkbox"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/circle_button_default"
+                        android:layout_gravity="center_vertical|end"
+                        android:button="@drawable/selector_checkbox_gradient_payments"
+                        android:checked="true"
+                        android:layoutDirection="rtl" />
+                </FrameLayout>
+            </FrameLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_large"
+        android:drawableStart="@drawable/ic_error_outline_black_24dp"
+        android:drawablePadding="@dimen/margin_medium"
+        android:gravity="center"
+        android:text="@string/back_your_deposit"
+        android:textColor="@android:color/holo_red_light" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/margin_xlarge"
+        android:paddingEnd="@dimen/margin_xlarge"
+        android:text="@string/paybuy_0_3"
+        android:textColor="@color/colorTextGray" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/view_controller_payment_selection_confirm_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="@dimen/margin_xlarge"
+            android:layout_marginEnd="@dimen/margin_xlarge"
+            android:layout_marginBottom="@dimen/margin_xlarge"
+            android:background="@drawable/selector_login_button"
+            android:enabled="true"
+            android:text="@string/deposit"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
